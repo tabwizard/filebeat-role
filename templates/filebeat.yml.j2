@@ -1,5 +1,5 @@
 output.elasticsearch:
-    hosts: ["http://{{ el_instance }}:9200"]
+    hosts: ["http://{{ elastic_instance }}:9200"]
 setup.kibana:
-    host: "http://{{ kbn_instance }}:5601"
+    host: "http://{{ kibana_instance }}:5601"
 filebeat.config.modules.path: ${path.config}/modules.d/*.yml
