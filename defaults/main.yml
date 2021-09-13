@@ -1,0 +1,5 @@
+---
+filebeat_version: "7.14.1"
+filebeat_install_type: remote
+el-instance: {{ hostvars['el-instance']['ansible_facts']['default_ipv4']['address'] }}
+kbn_instance: {{ hostvars['k-instance']['ansible_facts']['default_ipv4']['address'] }}
