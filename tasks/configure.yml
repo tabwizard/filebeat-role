@@ -22,3 +22,4 @@
   until: filebeat_setup is succeeded
   notify: restart Filebeat
   changed_when: false
+  when: kibana_instance|string != '0.0.0.0'

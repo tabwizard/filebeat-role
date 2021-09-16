@@ -1,0 +1,20 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: "Check file /usr/share/filebeat/bin/filebeat"
+      stat:
+        path: /usr/share/filebeat/bin/filebeat
+      register: bin_stat_result
+    - name: "Check file /var/log/filebeat/filebeat"
+      stat:
+        path: /var/log/filebeat/filebeat
+      register: log_stat_result
+    - name: "Assert file filebeat bin & filebeat log-file"
+      assert:
+        that: 
+        - bin_stat_result.stat.exists
+        - log_stat_result.stat.exists

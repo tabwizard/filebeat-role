@@ -1,0 +1,8 @@
+---
+- name: Install Filebeat
+  become: true
+  dnf:
+    name: "/tmp/filebeat-{{ filebeat_version }}-x86_64.rpm"
+    state: present
+    disable_gpg_check: true
+  notify: restart Filebeat

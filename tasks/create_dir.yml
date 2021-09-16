@@ -1,0 +1,6 @@
+---
+- name: "Create directory to download"
+  file:
+    path: files
+    state: directory
+  delegate_to: localhost
