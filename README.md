@@ -14,8 +14,8 @@ Role Variables
 |   Variable name   |   Default   |   Description                                                      |
 |-------------------|-------------|--------------------------------------------------------------------|
 | filebeat_version  | "7.14.1"    | Параметр, который определяет какой версии kibana будет установлена |
-| kibana_instance   | "{{ hostvars['kbn-instance']['ansible_facts']['default_ipv4']['address'] | default('0.0.0.0') }}" | Адрес хоста Kibana                                                 |
-| elastic_instance  | "{{ hostvars['el-instance']['ansible_facts']['default_ipv4']['address'] | default('0.0.0.0') }}" | Адрес хоста с Elasticsearch                                        |
+| kibana_instance   | "{{ hostvars['kbn-instance']['ansible_facts']['default_ipv4']['address'] \| default('0.0.0.0') }}" | Адрес хоста Kibana                                                 |
+| elastic_instance  | "{{ hostvars['el-instance']['ansible_facts']['default_ipv4']['address'] \| default('0.0.0.0') }}" | Адрес хоста с Elasticsearch                                        |
 
 Example Playbook
 ----------------
